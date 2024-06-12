@@ -1,0 +1,384 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+h1 {
+  height: 100px;
+  width: 100%;
+  text-align: center;
+  padding: 20px;
+}
+
+h2 {
+  text-align: center;
+  width: 100%;
+  margin-bottom: 50px;
+}
+
+header {
+  background-color: gray;
+  height: 200px;
+}
+header .pesoobjetivo {
+  padding: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.progress {
+  height: 15px;
+  border-radius: 5px;
+  border: solid 1px black;
+  width: 70%;
+  background-color: white;
+  inset: 0;
+  margin: auto;
+}
+.progress .progress-bar {
+  background-color: aquamarine;
+  height: 100%;
+  width: 50%;
+  border-radius: 5px;
+}
+
+main {
+  background-color: gray;
+  height: auto;
+  margin: 50px;
+  inset: 0;
+}
+main .calorias {
+  padding: 20px 0;
+  width: 100%;
+  height: 80%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+main .calorias div {
+  background-color: white;
+  height: 200px;
+  width: 200px;
+  border-radius: 100%;
+  text-align: center;
+  line-height: 200px;
+}
+main .macros {
+  padding-top: 20px;
+  width: 80%;
+  height: 80px;
+  margin: auto;
+  inset: 0;
+  display: flex;
+  justify-content: space-around;
+}
+
+.diary {
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  height: auto;
+  width: 100%;
+  background-color: gray;
+}
+.diary .food-card {
+  background-color: rgb(216, 215, 215);
+  height: 300px;
+  width: 45%;
+  border: solid 2px;
+  border-radius: 20px;
+  border-color: black;
+  text-align: center;
+  padding: 20px;
+}
+
+#water-section {
+  margin: 50px 0;
+  padding: 50px;
+  width: 100%;
+  height: auto;
+  background-color: gray;
+  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+}
+#water-section h2, #water-section h3 {
+  width: 100%;
+  margin-bottom: 20px;
+}
+#water-section div {
+  margin-top: 30px;
+  height: 300px;
+  background-color: beige;
+  border: solid 2px;
+  border-color: black;
+}
+#water-section #water {
+  width: 80%;
+}
+#water-section #option-water {
+  width: 20%;
+}
+
+footer {
+  height: 80px;
+  background-color: gray;
+  display: flex;
+  justify-content: space-around;
+  margin: 0;
+}
+footer a {
+  display: block;
+  border: solid 1px black;
+  width: 25%;
+  text-decoration: none;
+  text-align: center;
+  line-height: 80px;
+}
+
+#page0 p {
+  text-align: center;
+  margin-bottom: 40px;
+}
+#page0 section {
+  width: 80%;
+  height: 300px;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 40px;
+}
+#page0 section button {
+  height: 50px;
+  width: 150px;
+  border-radius: 10px;
+}
+#page0 #formulario {
+  height: auto;
+}
+#page0 #formulario form {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+#page0 #formulario label {
+  text-align: center;
+  width: 60%;
+  margin-bottom: 10px;
+}
+#page0 #formulario input {
+  width: 60%;
+  height: 30px;
+  margin-bottom: 30px;
+  border-radius: 10px;
+}
+#page0 #registrarse {
+  height: auto;
+}
+#page0 #registrarse a {
+  display: block;
+  width: 80%;
+  height: 20px;
+  text-align: center;
+  margin: 10px;
+}
+
+#page1 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+#page1 .input-section {
+  padding: 50px;
+  width: 80%;
+  height: auto;
+  border: solid 2px black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  flex-direction: column;
+}
+#page1 .input-section input, #page1 .input-section select {
+  width: 70%;
+  height: 50px;
+  border-radius: 20px;
+  padding: 15px;
+}
+#page1 #arrow-section {
+  height: 100px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+#page1 #arrow-section button {
+  margin: 20px 0;
+  width: 20%;
+  font-size: 50px;
+  border-radius: 10px;
+}
+#page1 #arrow-section button h4 {
+  display: none;
+}
+#page1 #arrow-section button:hover h4 {
+  display: block;
+  font-size: 40px;
+}
+#page1 #arrow-section button:hover i {
+  display: none;
+}
+
+#page2 #resultados {
+  inset: 0;
+  margin: auto;
+  width: 80%;
+  height: 100vh;
+  border: solid 1px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+#page2 #resultados img {
+  height: 40%;
+}
+#page2 #resultados #imcInformacion {
+  margin-bottom: 50px;
+  width: 80%;
+  height: 10%;
+  padding-top: 20px;
+  text-align: center;
+}
+#page2 #resultados #imcResultado {
+  height: 40%;
+}
+#page2 #resultados #imcResultado #imc {
+  height: 100%;
+  width: 250px;
+  border: solid 1px;
+  border-radius: 100%;
+  text-align: center;
+  padding: 10px;
+}
+#page2 #resultados #imcResultado #imc h4 {
+  line-height: 100px;
+  font-size: 30px;
+}
+#page2 #resultados #imcResultado #imc p {
+  line-height: 80px;
+  font-size: 60px;
+}
+#page2 .continuar {
+  margin: 30px 0;
+  height: 100px;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+#page2 .continuar h2 {
+  text-align: center;
+  width: 100%;
+  margin-bottom: 20px;
+}
+#page2 .continuar button {
+  width: 10%;
+  height: 50px;
+}
+
+#page3 section {
+  width: 80%;
+  height: 300px;
+  margin: auto;
+  border: solid black 1px;
+}
+#page3 section div {
+  width: 100%;
+  margin: 30px;
+  text-align: center;
+}
+#page3 section div label {
+  display: block;
+  width: 100%;
+  margin-bottom: 10px;
+}
+#page3 section div input, #page3 section div select {
+  height: 30px;
+  width: 50%;
+  border-radius: 10px;
+}
+#page3 section div button {
+  margin-top: 30px;
+  width: 20%;
+  height: 60px;
+  border-radius: 10px;
+}
+
+#pages4 #calorias {
+  display: grid;
+  grid-template-rows: 3fr 1fr;
+  grid-template-columns: 60% 40%;
+  grid-template-areas: "informacion-escrita informacion-grafica" "distribucion  distribucion";
+}
+#pages4 #calorias #calorias-informacion {
+  grid-area: informacion-escrita;
+  width: 100%;
+  height: 500px;
+  border: solid 1px black;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+#pages4 #calorias #calorias-informacion #calorias-informacion-texto {
+  display: block;
+  width: 80%;
+}
+#pages4 #calorias #calorias-informacion #calorias-informacion-texto span {
+  font-weight: bolder;
+}
+#pages4 #calorias #calorias-informacion .calorias-diarias {
+  width: 250px;
+  height: 250px;
+  margin: 50px 20px;
+  border-radius: 100%;
+  border: solid 2px black;
+  text-align: center;
+  padding: 10px;
+  line-height: 90px;
+  font-size: 26px;
+}
+#pages4 #calorias #calorias-informacion .calorias-diarias p {
+  font-size: 70px;
+}
+#pages4 #calorias #grafico-informacion {
+  grid-area: informacion-grafica;
+  border: 1px solid black;
+  width: 100%;
+  height: 500px;
+}
+#pages4 #calorias #distribucion {
+  width: 100%;
+  grid-area: distribucion;
+  padding: 20px;
+  margin: auto;
+}
+#pages4 #calorias #distribucion div {
+  margin: auto;
+  width: 80%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+#pages4 #calorias #distribucion div button {
+  width: 200px;
+  height: 50px;
+}
+
+/*# sourceMappingURL=style.css.map */
