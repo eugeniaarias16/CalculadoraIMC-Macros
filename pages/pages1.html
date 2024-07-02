@@ -10,46 +10,50 @@
     <title>Conocerte Mejor</title>
 </head>
 <body id="page1">
-    <h1>Queremos Conocerte Mejor</h1>
+
     <h2>Completa con tu información</h2>
 
-    <section class="input-section">
-        <label for="Nombre">Nombre:</label>
+    <form class="input-section">
+
+        <label for="nombre">Nombre:</label>
         <input type="text" name="Nombre" id="nombre" placeholder="Nombre" pattern="[A-Za-z\s]+" title="Solo letras y espacios permitidos" required>
         
-        <label for="Edad">Edad:</label>
+        <label for="edad">Edad:</label>
         <input type="text" name="Edad" id="edad" placeholder="Edad" min="1" max="100" required>
         
-        <label for="Genero">Genero</label>
-        <select name="Genero" id="Genero">
+        <label for="genero">Genero</label>
+        <select name="Genero" id="genero" required>
             <option value="Mujer">Mujer</option>
             <option value="Hombre">Hombre</option>
         </select>
 
-        <label for="altura">Altura</label>
+        <label for="altura">Altura</label >
         <input type="text" name="Altura" id="altura" required placeholder="altura en metros Ej: 1.75">
         
-        <label for="Peso">Peso</label>
+        <label for="peso">Peso</label>
         <input type="text" name="Peso" id="peso" required placeholder="Peso en kg Ej: 80,5">
-    
-    
-    
-    
-    
-    </section>
+        
+        
+        <button id="validar">
+            <h4>Validar Datos</h4>
+        </button>
+    </form>
     
     <section id="arrow-section">
-        <button type="button" aria-label="Next">
-            <h4>Siguiente</h4>
+        <button id="btn-next" type="button" aria-label="Next">
+            <h4>Calcular IMC</h4>
             <i class="fa-solid fa-arrow-right"></i>
         </button> 
     </section>
 
     
 
-
-
+    <script src="anime.min.js"></script>
     <script src="https://kit.fontawesome.com/3161d4d259.js" crossorigin="anonymous"></script>
-    <!-- <script src="../js/javascript.js"></script> -->
+    <script src="../js/js1.js"></script>
 </body>
 </html>
+
+
+
+    
