@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Calories&MacrosCalculator</title>
+	<script src="https://kit.fontawesome.com/3161d4d259.js" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.12.2/dist/sweetalert2.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="../style/style.css" class="rel" />
+</head>
+
+<body id="pages5">
+	<header>
+		<h1>
+            <svg width="784" height="120" viewBox="0 0 784 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path class="demo-svg-path"  stroke-width="3" d="M736.783 118L719.194 92.4501L704.172 118H658.768L696.218 58.9638L657.145 2.25H703.946L720.936 27.0336L735.5 2.25H780.922L743.907 60.3918L783.575 118H736.783ZM737.911 60.5L771.811 7.25H738.361L721.261 36.35L701.311 7.25H666.661L702.211 58.85L667.861 113H701.311L718.861 83.15L739.411 113H774.061L737.911 60.5Z" fill="none"/>
+                <path class="demo-svg-path" stroke-width="3" d="M540.151 111.512L540.131 111.501C531.076 106.373 523.847 99.3073 518.503 90.3648L518.484 90.3341L518.467 90.3031C513.19 81.1785 510.595 70.9521 510.595 59.75C510.595 48.5486 513.19 38.3616 518.48 29.3241L518.489 29.3081C523.835 20.2535 531.079 13.1657 540.171 8.12674C549.245 3.0976 559.185 0.600006 569.895 0.600006C580.691 0.600006 590.639 3.09145 599.631 8.13334C608.722 13.1747 615.92 20.2686 621.166 29.3346C626.452 38.3695 629.045 48.5529 629.045 59.75C629.045 70.9521 626.45 81.1785 621.173 90.3031L621.167 90.3145L621.16 90.3259C615.913 99.2899 608.723 106.368 599.659 111.501L599.639 111.512L599.619 111.523C590.544 116.552 580.605 119.05 569.895 119.05C559.185 119.05 549.245 116.552 540.171 111.523L540.151 111.512ZM616.845 31.85C612.045 23.55 605.495 17.1 597.195 12.5C588.995 7.90001 579.895 5.60001 569.895 5.60001C559.995 5.60001 550.895 7.90001 542.595 12.5C534.295 17.1 527.695 23.55 522.795 31.85C517.995 40.05 515.595 49.35 515.595 59.75C515.595 70.15 517.995 79.5 522.795 87.8C527.695 96 534.295 102.45 542.595 107.15C550.895 111.75 559.995 114.05 569.895 114.05C579.795 114.05 588.895 111.75 597.195 107.15C605.495 102.45 612.045 96 616.845 87.8C621.645 79.5 624.045 70.15 624.045 59.75C624.045 49.35 621.645 40.05 616.845 31.85ZM583.856 76.0806L583.875 76.0594C587.262 72.2869 589.195 67.0314 589.195 59.75C589.195 52.2267 587.241 46.9634 583.909 43.3286L583.873 43.2887L583.837 43.248C580.634 39.5979 576.195 37.6 569.895 37.6C563.471 37.6 558.993 39.6131 555.803 43.248L555.786 43.2672L555.769 43.2862C552.514 46.9193 550.595 52.1985 550.595 59.75C550.595 67.1648 552.496 72.4731 555.786 76.2323C558.965 79.7703 563.448 81.75 569.895 81.75C576.195 81.75 580.634 79.7521 583.837 76.1021L583.856 76.0806ZM587.595 79.4C583.295 84.3 577.395 86.75 569.895 86.75C562.295 86.75 556.345 84.35 552.045 79.55C547.745 74.65 545.595 68.05 545.595 59.75C545.595 51.35 547.745 44.75 552.045 39.95C556.345 35.05 562.295 32.6 569.895 32.6C577.395 32.6 583.295 35.05 587.595 39.95C591.995 44.75 594.195 51.35 594.195 59.75C594.195 67.95 591.995 74.5 587.595 79.4Z" fill="none"/>
+                <path class="demo-svg-path" stroke-width="3" d="M475.813 2.25V35.65H433.513V44.25H464.713V76.6H433.513V118H394.113V2.25H475.813ZM428.513 71.6H459.713V49.25H428.513V30.65H470.813V7.25H399.113V113H428.513V71.6Z" fill="none"/>
+                <path class="demo-svg-path" stroke-width="3" d="M292.525 2.25V35.65H264.325V118H224.925V35.65H197.025V2.25H292.525ZM229.925 30.65V113H259.325V30.65H287.525V7.25H202.025V30.65H229.925Z" fill="none"/>
+                <path class="demo-svg-path" stroke-width="3" d="M160.132 2.25V118H120.732V2.25H160.132ZM155.132 7.25H125.732V113H155.132V7.25Z" fill="none"/>
+                <path class="demo-svg-path" stroke-width="3" d="M82.35 2.25V35.65H40.05V44.25H71.25V76.6H40.05V118H0.649994V2.25H82.35ZM35.05 71.6H66.25V49.25H35.05V30.65H77.35V7.25H5.64999V113H35.05V71.6Z" fill="none"/>
+            </svg>
+        </h1>
+		<section class="pesoobjetivo">
+			<div class="info-peso" id="peso-inicio"></div>
+			<div class="info-peso" id="peso-actual">
+				<h2 >Peso Actual</h2>
+				<div>
+				<p id="peso-actual-p"></p>
+				<div id="btn-peso">
+					<button id="modificar-peso"><i class="fa-regular fa-pen-to-square"></i></button>
+				</div>
+				</div>
+			</div>
+			<div class="info-peso" id="peso-objetivo"></div>
+		</section>
+		
+		<div class="progress">
+			<div id="progress-bar" ><img id="fox" src="../extras/png-fox.png" alt=""></i></div>
+			<img id="trofeo" src="../extras/trofeo.png" alt="">
+			
+		</div>
+	</header>
+
+	<main>
+		<section class="calorias">
+			<div>
+				<h4 id="cal-consumidas" class="calorias-numero">500</h4>
+				<h3>Calorias Consumidas</h3>
+			</div>
+			<div>
+				<h4 id="cal-totales" class="calorias-numero">500</h4>
+				<h3>Calorias Totales</h3>
+				<button id="modificar_cal">Modificar Calorias</button>
+			</div>
+			<div>
+				<h4 id="cal-restantes" class="calorias-numero">500</h4>
+				<h3>Calorias Restantes</h3>
+			</div>
+
+		</section>
+	
+		<section class="macros">
+			<div>
+				<h4>Proteinas</h4>
+				<p id="prot-dia" class="macros-dia">0/5</p>
+			</div>
+			<div>
+				<h4>Carbohidratos</h4>
+				<p id="carb-dia" class="macros-dia">0/5</p>
+			</div>
+			<div>
+				<h4>Grasas</h4>
+				<p id="fats-dia" class="macros-dia">0/5</p>
+			</div>
+			
+		</section>
+		
+	</main>
+
+	<section class="diary">
+		<h1>Diario</h1>
+		<div id="desayuno_card" class="food-card">
+			<h3>Desayuno</h3>
+			<div id="desayuno" class="card-food"></div>
+			<div class="subtotal">
+				<h5 class="sub-nam"><span>Nombre: </span></h5>
+				<h5 class="sub-cal"><span>Calorias:</span></h5>
+				<h5 class="sub-carb"><span>Carbohidratos:</span></h5>
+				<h5 class="sub-prot"><span>Proteinas:</span></h5>
+				<h5 class="sub-fat"><span>Grasas:</span></h5>
+			</div>
+		</div>
+		<div id="almuerzo_card" class="food-card">
+			<h3>Almuerzo</h3>
+			<div id="almuerzo" class="card-food"></div>
+			<div class="subtotal">
+				<h5 class="sub-nam"><span>Nombre: </span></h5>
+				<h5 class="sub-cal"><span>Calorias:</span></h5>
+				<h5 class="sub-carb"><span>Carbohidratos:</span></h5>
+				<h5 class="sub-prot"><span>Proteinas:</span></h5>
+				<h5 class="sub-fat"><span>Grasas:</span></h5>
+			</div>
+		</div>
+		<div id="snack_card" class="food-card">
+			<h3>Snack</h3>
+			<div id="snack" class="card-food"></div>
+			<div class="subtotal">
+				<h5 class="sub-nam"><span>Nombre: </span></h5>
+				<h5 class="sub-cal"><span>Calorias:</span></h5>
+				<h5 class="sub-carb"><span>Carbohidratos:</span></h5>
+				<h5 class="sub-prot"><span>Proteinas:</span></h5>
+				<h5 class="sub-fat"><span>Grasas:</span></h5>
+			</div>
+		</div>
+		<div id="cena_card" class="food-card">
+			<h3>Cena</h3>
+			<div id="cena" class="card-food"></div>
+			<div class="subtotal">
+				<h5 class="sub-cal"><span>Calorias:</span></h5>
+				<h5 class="sub-carb"><span>Carbohidratos:</span></h5>
+				<h5 class="sub-prot"><span>Proteinas:</span></h5>
+				<h5 class="sub-fat"><span>Grasas:</span></h5>
+			</div>
+		</div>
+	
+	</section>
+	<section id="water-section">
+		<h2>Registro de Agua</h2>
+		<h3>Objetivo de Agua por dia:</h3>
+		<div id="water">
+		</div>
+		<div id="option-water"></div>
+	</section>
+
+	<footer>
+		<a href="">menu</a>
+		<a href="">menu</a>
+		<a href="">menu</a>
+		<a href="">menu</a>
+	</footer>
+<script src="../js/j5.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.12.2/dist/sweetalert2.all.min.js"></script>
+<script src="../js/catalogo.js"></script>
+
+</body>
+
+</html>

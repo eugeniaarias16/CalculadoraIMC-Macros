@@ -1,4 +1,4 @@
-//PAGES4.HTML
+
 // FONDO ANIMADO (obtenido de https://devdevout.com/css/css-animated-backgrounds#google_vignette )
 
 // (function($){
@@ -333,6 +333,9 @@ function calcularCaloriasMax(objetivoFinal, TMBT) {
 
 const MIN_CAL=parseInt(calcularCaloriasMin(objetivoFinal,TMBT)); 
 const MAX_CAL = parseInt(calcularCaloriasMax(objetivoFinal, TMBT));
+
+localStorage.setItem('max-cal',MAX_CAL);
+localStorage.setItem('min-cal',MIN_CAL);
 
 let minCalDiarias= document.getElementById('min-calorias');
 minCalDiarias.innerHTML= `${MIN_CAL}`;
