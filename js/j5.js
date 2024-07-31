@@ -312,12 +312,12 @@ function actualizarBarra(){
   barraProgreso.style.width=objetivoAlcanzado;
   console.log(objetivoAlcanzado)
   modificarColorBarra(objetivoAlcanzado);
-  setTimeout(()=>{
-    Swal.fire({
-    title: "Felitaciones!",
-    text: `Has alcanzado el ${objetivoAlcanzado} de tu peso deseado`,
-    icon: "success"
-  });},"2000");
+  // setTimeout(()=>{
+  //   Swal.fire({
+  //   title: "Felitaciones!",
+  //   text: `Has alcanzado el ${objetivoAlcanzado} de tu peso deseado`,
+  //   icon: "success"
+  // });},"2000");
   
   }
 
@@ -378,13 +378,182 @@ console.log(`Su peso actual es ${pesoActual}kg`);
 
 
 
+// SECCION WATER 
+
+//cantidad de agua tomada
+let carritoAgua = 0;
+
+
+console.log(`carrito agua: ${carritoAgua}`);
+
+const btnAddWater = document.querySelectorAll('.add-water'); // llamo todos los botones 
+let bottleContainerList = document.querySelectorAll('.bottle-container'); // nodeList 
+console.log(bottleContainerList);
+
+
+// función para llenar botella con agua
+function visibilidadBotella(btn) { 
+  const bottleContainer = btn.closest('.bottle-container');
+  bottleContainer.classList.add('active');
+  const bottle = bottleContainer.querySelector('.bottle'); 
+  bottle.classList.toggle('hidden'); // agrego
+  const bottleFull = bottleContainer.querySelector('.bottle-full'); 
+  bottleFull.classList.toggle('hidden'); // elimino
+  carritoAgua++;
+  console.log(`se agregó una nueva botella al carrito, su carrito de agua es: ${carritoAgua}`);
+  setTimeout(agregarBotella(), 1000);
+  calcularAgua(bottle);
+}
+
+// crear nueva botella vacía
+function agregarBotella(option) {
+  if (carritoAgua < 5) {
+    const sectionWater = document.getElementById('water');
+    const bottleContainer = document.createElement('div');
+    bottleContainer.classList.add('bottle-container', 'inactive');
+    if(option=="glass"){
+      bottleContainer.innerHTML = `
+      <img class="bottle empty" src="../extras/glass.png" alt="">
+      <img class="bottle bottle-full hidden" src="../extras/glass-of-water.png" alt="">
+      <button class="add-water"><i class="fa-solid fa-circle-plus"></i></button>
+    `;
+
+    }else {
+      bottleContainer.innerHTML = `
+      <img class="bottle empty" src="../extras/water.png" alt="">
+      <img class="bottle bottle-full hidden" src="../extras/water1.png" alt="">
+      <button class="add-water"><i class="fa-solid fa-circle-plus"></i></button>
+    `;
+    }
+
+    sectionWater.appendChild(bottleContainer);
+  
+    // evento click al nuevo botón
+    const newBtnAddWater = bottleContainer.querySelector('.add-water');
+    newBtnAddWater.addEventListener('click', () => {
+      visibilidadBotella(newBtnAddWater); // función de visibilidad al nuevo botón
+      setTimeout(activarBotellaSiguiente, 500);
+    });
+
+    // actualizar la lista de contenedores
+    bottleContainerList = document.querySelectorAll('.bottle-container');
+    console.log(bottleContainerList);
+  } else {
+    console.log("Ha alcanzado el máximo de agua en el día");
+  }
+}
+
+function activarBotellaSiguiente() {
+  // actualizar la lista de contenedores
+  bottleContainerList = document.querySelectorAll('.bottle-container');
+
+  for (let i = 0; i < bottleContainerList.length; i++) {
+    if (bottleContainerList[i].classList.contains('active')) {
+      if (bottleContainerList[i + 1] && bottleContainerList[i + 1].classList.contains('inactive')) { // verificar que el siguiente elemento existe y está inactivo
+        bottleContainerList[i + 1].classList.remove('inactive');
+        break;
+      }
+    }
+  }
+}
+
+// agregar eventos a los botones existentes
+btnAddWater.forEach((btn) => {
+  btn.addEventListener('click', () => {
+    visibilidadBotella(btn);
+    setTimeout(activarBotellaSiguiente, 500);
+  });
+});
+
+
+
+
+
+
+
+const contadorAgua=document.getElementById('contador-agua');
+let mlAgua;
+function calcularAgua(recipiente){
+  if(recipiente=="bottle"){
+    mlAgua=carritoAgua*0.5
+  }else{
+    mlAgua=carritoAgua*0.25
+  }
+  contadorAgua.innerHTML=`${mlAgua} ml`;
+}
+
+
+
+
+
+//OPTION WATER
+const btnBottle= document.getElementById('bottle-opt');
+const btnGlass=document.getElementById('glass-opt');
+btnBottle.addEventListener('click', () => visibilidadContainer(btnBottle, btnGlass,'bottle' ));
+btnGlass.addEventListener('click', () => visibilidadContainer(btnGlass, btnBottle,'glass'));
+
+const containerBottle=document.getElementById('bottle');
+const containerGlass=document.getElementById('glass');
+
+
+function visibilidadContainer(activeBtn, inactiveBtn,option){
+
+  const activeOptContainer = activeBtn.closest('.option-container');
+  const inactiveOptContainer = inactiveBtn.closest('.option-container');
+
+  //activar contenedor seleccionado
+  activeOptContainer.classList.add('active');
+  activeOptContainer.classList.remove('inactive');
+  const activeEmpty=activeOptContainer.querySelector('.empty');
+  const activeFull=activeOptContainer.querySelector('.bottle-full');
+  activeEmpty.classList.add('hidden');
+  activeFull.classList.remove('hidden');
+
+
+  //desactivar contenedor no seleccionado
+  inactiveOptContainer.classList.remove('active');
+  inactiveOptContainer.classList.add('inactive');
+  const inactiveEmpty = inactiveOptContainer.querySelector('.empty');
+  const inactiveFull = inactiveOptContainer.querySelector('.bottle-full');
+  inactiveEmpty.classList.remove('hidden');
+  inactiveFull.classList.add('hidden');
+  cambiarContenedor(option)
+}
+
+function cambiarContenedor(option){
+  const sectionWater=document.getElementById('water');
+  const containerEmpty= sectionWater.querySelectorAll('.empty');
+  const containerFull=sectionWater.querySelectorAll('.bottle-full');
+  
+  if(option=="glass"){
+
+    containerEmpty.forEach((container=>{
+      container.src='../extras/glass.png';
+    }));
+    
+    containerFull.forEach((container=>{
+      container.src='../extras/glass-of-water.png';
+    }))
+  }else{
+    containerEmpty.forEach((container=>{
+      container.src='../extras/water.png';
+    }));
+    containerFull.forEach((container=>{
+      container.src='../extras/water1.png';
+    }))
+  }
+  agregarBotella(option)
+}
+
+
+// const contadorRecipiente=document.getElementById('contador-recipiente');
+// const recipiente=document.getElementById('recipiente');
 
 
 
 
 
 })
-
 
 
 

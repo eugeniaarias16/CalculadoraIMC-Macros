@@ -828,10 +828,6 @@ h2 {
   font-weight: 400;
 }
 
-.hidden {
-  display: none;
-}
-
 #pages5 {
   background-color: #45595e;
 }
@@ -1095,43 +1091,142 @@ h2 {
   margin: 50px 0;
   padding: 50px;
   width: 100%;
-  height: auto;
+  height: max-content;
   text-align: center;
   display: flex;
   flex-wrap: wrap;
+  flex-direction: row;
 }
 #pages5 #water-section h2,
 #pages5 #water-section h3 {
   width: 100%;
   margin-bottom: 20px;
 }
-#pages5 #water-section div {
-  margin-top: 30px;
+#pages5 #water-section #option-water {
+  width: 250px;
   height: 300px;
+  background-color: beige;
+  border-color: black;
+  border: solid 2px;
+  margin-top: 30px;
+  display: flex;
+  justify-content: left;
+  align-items: start;
+  flex-wrap: wrap;
+}
+#pages5 #water-section #option-water .noDisplay {
+  display: none;
+}
+#pages5 #water-section #option-water h3 {
+  height: 10%;
+}
+#pages5 #water-section #option-water .option-container {
+  width: 100%;
+  height: 40%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+}
+#pages5 #water-section #option-water .option-container h5 {
+  align-self: end;
+  width: 100px;
+}
+#pages5 #water-section #option-water .option-container img {
+  height: 80px;
+  position: absolute;
+}
+#pages5 #water-section #water {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: space-between;
+  gap: 10px;
+  width: 50%;
+  margin-top: 30px;
+  height: auto;
   background-color: beige;
   border: solid 2px;
   border-color: black;
+  position: relative;
 }
-#pages5 #water-section #water {
-  width: 80%;
+#pages5 #water-section #water .water-container {
+  display: flex;
+  flex-direction: row;
+  position: absolute;
+  justify-content: center;
+  justify-self: flex-start;
+  align-self: end;
+  width: 100%;
 }
-#pages5 #water-section #option-water {
-  width: 20%;
+#pages5 #water-section #water .info-water {
+  width: 100%;
 }
-#pages5 footer {
+#pages5 #water-section #water .info-water h3 {
+  font-size: 30px;
+}
+#pages5 #water-section #water .info-water h4 {
+  font-size: 20px;
+}
+#pages5 #water-section #water .bottle-container {
+  width: 100px;
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+#pages5 #water-section #water .bottle-container button {
+  align-self: flex-end;
+  border: none;
+  background-color: rgba(25, 71, 87, 0);
+  font-size: 25px;
+  transition: 0.2 ease-in-out;
+}
+#pages5 #water-section #water .bottle-container button :hover {
+  scale: 0.9;
+  color: #FCA311;
+}
+#pages5 #water-section #water .bottle-container .bottle {
+  height: 80px;
+  position: absolute;
+  transition: opacity 0.5s ease;
+}
+#pages5 #water-section footer {
   height: 80px;
   background-color: gray;
   display: flex;
   justify-content: space-around;
   margin: 0;
 }
-#pages5 footer a {
+#pages5 #water-section footer a {
   display: block;
   border: solid 1px black;
   width: 25%;
   text-decoration: none;
   text-align: center;
   line-height: 80px;
+}
+
+@keyframes waves {
+  0%, 100% {
+    clip-path: polygon(0% 47%, 10% 48%, 33% 54%, 54% 60%, 70% 61%, 84% 59%, 100% 52%, 100% 100%, 0% 100%);
+  }
+  50% {
+    clip-path: polygon(0% 60%, 15% 65%, 34% 66%, 51% 62%, 67% 50%, 84% 45%, 100% 46%, 100% 100%, 0% 100%);
+  }
+}
+.inactive {
+  opacity: 0.4;
+}
+
+.active {
+  opacity: 1;
+}
+
+.hidden {
+  opacity: 0;
+  transition: opacity 0.5s ease;
 }
 
 /*# sourceMappingURL=style.css.map */
