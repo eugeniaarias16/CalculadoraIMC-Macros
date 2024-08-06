@@ -1,4 +1,5 @@
 //BASE DE DATOS ESPAÑOL
+
 class Alimento {
   constructor(id, nombre, categoria, marca, calorias, carbohidratos, proteinas, grasas, cantidad, unidad) {
     this.id = id;
@@ -481,6 +482,11 @@ function agregarAlimento(comida, btnId){
   }
   almacenarStorage(comidaArray);
 }
+
+const btnInicio=document.getElementById('btnInicio');
+btnInicio.addEventListener('click',()=>window.location.href='/pages/pages5.html')
+
+
 
 // function almacenarStorage(value){
 //   switch(value){

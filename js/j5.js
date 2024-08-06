@@ -88,6 +88,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+  //FOOTER
+  const btnAyuno=document.getElementById('ayuno-section');
+  btnAyuno.addEventListener('click',()=>window.location.href="/pages/pages6.html");
+
+  const btnDatos= document.getElementById('datos-personales');
+  btnDatos.addEventListener('click',()=>window.location.href="/pages/pages7.html")
 
   //SUBTOTALES MACROS 
   function contabilizarMacrosSubTotales(comidaNombre) { //funcion que busca mostar las macros de cada comida

@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Alimentos</title>
+    <script src="anime.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.12.2/dist/sweetalert2.min.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,7 +15,12 @@
 </head>
 <body id="catalogo">
     <header>
-        <div class="input-group mb-3">
+        <div id="volver-inicio">
+            <button id="btnInicio">                    
+                <img src="../extras/foxvector.png" alt="">
+            </button>
+        </div>
+        <div class="input-group mb-3 buscador-section">
             <button class="btn btn-outline-secondary" type="button" id="btn-buscar"><i
                     class="fa-solid fa-magnifying-glass"></i></button>
             <input type="text" id="buscador" class="form-control" placeholder="Buscar..."
