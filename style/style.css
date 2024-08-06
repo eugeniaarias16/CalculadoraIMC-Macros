@@ -268,10 +268,13 @@ h5, p, span {
 }
 #page1 #arrow-section button h4 {
   display: none;
+  visibility: hidden;
 }
 #page1 #arrow-section button:hover h4 {
   display: block;
+  visibility: visible;
   font-size: 30px;
+  color: #FCA311;
 }
 #page1 #arrow-section button:hover i {
   display: none;

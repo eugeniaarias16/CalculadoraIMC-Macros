@@ -322,12 +322,15 @@ h5,p,span{
 
     h4 {
       display: none;
+      visibility: hidden;
     }
 
     &:hover {
       h4 {
         display: block;
+        visibility: visible;
         font-size: 30px;
+        color: $color1;
       }
 
       i {
