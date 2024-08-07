@@ -484,7 +484,7 @@ function agregarAlimento(comida, btnId){
 }
 
 const btnInicio=document.getElementById('btnInicio');
-btnInicio.addEventListener('click',()=>window.location.href='/pages/pages5.html')
+btnInicio.addEventListener('click',()=>window.location.href='../pages/pages5.html')
 
 
 
