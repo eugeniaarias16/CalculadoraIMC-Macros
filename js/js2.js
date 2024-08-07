@@ -47,5 +47,5 @@ IMC_TEXTO.innerHTML=`Su Índice de Masa Corporal (IMC) es de ${imc} y según la 
 const MACROS_SI= document.getElementById('macrosSi');
 const MACROS_NO=document.getElementById('macrosNo');
 
-MACROS_SI.addEventListener('click',()=> window.location.href='/pages/pages3.html');
+MACROS_SI.addEventListener('click',()=> window.location.href='../pages/pages3.html');
 MACROS_NO.addEventListener('click',()=> document.write('Espero que nuestra informacion haya sido de ayuda. No olvide consultar con su doctor de confianza.'));

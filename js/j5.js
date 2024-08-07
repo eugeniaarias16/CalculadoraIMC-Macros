@@ -90,10 +90,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
   //FOOTER
   const btnAyuno=document.getElementById('ayuno-section');
-  btnAyuno.addEventListener('click',()=>window.location.href="/pages/pages6.html");
+  btnAyuno.addEventListener('click',()=>window.location.href='../pages/pages6.html');
 
   const btnDatos= document.getElementById('datos-personales');
-  btnDatos.addEventListener('click',()=>window.location.href="/pages/pages7.html")
+  btnDatos.addEventListener('click',()=>window.location.href='../pages/pages7.html')
 
   //SUBTOTALES MACROS 
   function contabilizarMacrosSubTotales(comidaNombre) { //funcion que busca mostar las macros de cada comida
@@ -574,7 +574,7 @@ function ContabilizarAgua(selectedOption){
 //BOTON PARA IR AL CATALOGO
 const btnCatalogo=document.getElementById('ir-catalogo');
 btnCatalogo.addEventListener('click',()=>{
-  window.location.href="/pages/catalogo.html"
+  window.location.href='../pages/catalogo.html'
 })
 
 })

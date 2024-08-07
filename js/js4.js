@@ -306,5 +306,5 @@ anime.timeline({loop: true})
 
   const btnPagPrincipal=document.getElementById('btn-pagina-principal');
   btnPagPrincipal.addEventListener('click',()=>{
-    window.location.href = "/pages/pages5.html"
+    window.location.href = '../pages/pages5.html'
   })

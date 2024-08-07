@@ -6,7 +6,7 @@ function validarDatos(objetivoKilos, objetivoPeso, nivelActividad) {
     console.log(
     `Usted desea ${objetivoPeso} peso y alcanzar un peso de ${objetivoKilos}kg.`
     );
-    window.location.href = "/pages/pages4.html";
+    window.location.href = '../pages/pages4.html';
   } else {
     alert("Ingrese un peso deseado válido, mayor que 40 y menor que 100");
   }

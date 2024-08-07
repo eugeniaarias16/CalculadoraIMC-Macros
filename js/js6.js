@@ -162,7 +162,7 @@ btnProtocolo.addEventListener('click', () => {
 });
 
 const btnHome=document.getElementById('home');
-btnHome.addEventListener('click', ()=>window.location.href="/pages/pages5.html")
+btnHome.addEventListener('click', ()=>window.location.href='../pages/pages5.html')
 
 
 
