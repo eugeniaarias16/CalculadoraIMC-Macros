@@ -484,32 +484,11 @@ function agregarAlimento(comida, btnId){
 }
 
 const btnInicio=document.getElementById('btnInicio');
-btnInicio.addEventListener('click',()=>window.location.href='/pages/pages5.html')
+btnInicio.addEventListener('click',()=>window.location.href='../pages/pages5.html')
 
 
 
-// function almacenarStorage(value){
-//   switch(value){
-//     case desayunoArray:
-//       localStorage.setItem('desayuno',JSON.stringify(desayunoArray));
-//       console.log('Datos guardados exitosamente en desayuno');
-//       break;
-//     case almuerzoArray:
-//       localStorage.setItem('almuerzo',JSON.stringify(almuerzoArray));
-//       console.log('Datos guardados exitosamente en almuerzo');
-//       break;  
-//     case snackArray:
-//       localStorage.setItem('snack',JSON.stringify(snackArray));
-//       console.log('Datos guardados exitosamente en snack');
-//       break;  
-//     case cenaArray:
-//       localStorage.setItem('cena',JSON.stringify(cenaArray));
-//       console.log('Datos guardados exitosamente en cena');
-//       break;  
-//     default:
-//       console.error("Error en almacenar Storage");  
-//   }
-// }
+
 
 
 
