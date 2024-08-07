@@ -92,7 +92,7 @@ console.log("peso: ",peso);
 let nextInput= document.getElementById('btn-next');
 nextInput.addEventListener('click',() =>{
   if(edad && genero && altura && peso){
-    window.location.href ='/pages/pages2.html';
+   window.location.href='/pages/pages2.html';
   }else {
     alert("Debe completar el formulario")
   }
